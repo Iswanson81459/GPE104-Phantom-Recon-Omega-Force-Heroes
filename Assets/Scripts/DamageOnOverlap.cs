@@ -9,7 +9,7 @@ public class DamageOnOverlap : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if(this.gameObject.name != "Blue SpaceShip")
+        if(this.gameObject.layer == 9)
         {
             GameManager.instance.damageZones.Add(this);
         }

@@ -9,7 +9,7 @@ public class UFO : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        player = GameObject.Find("Blue SpaceShip");
+        player = GameObject.Find("craftSpeeder");
     }
 
     // Update is called once per frame

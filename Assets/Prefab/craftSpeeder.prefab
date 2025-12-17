@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7050700769022020116}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: bulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4826418976979077635}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: camPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,6 +114,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: craftSpeeder
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38e912a97e23bb9419e9c1265e17c9eb, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38e912a97e23bb9419e9c1265e17c9eb, type: 3}
+      propertyPath: m_TagString
+      value: Actor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -135,6 +143,9 @@ PrefabInstance:
       addedObject: {fileID: 7390649845481129909}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 38e912a97e23bb9419e9c1265e17c9eb, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 4236849222585029568}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 38e912a97e23bb9419e9c1265e17c9eb, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 3332487711755714017}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 38e912a97e23bb9419e9c1265e17c9eb, type: 3}
       insertIndex: -1
@@ -142,6 +153,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 38e912a97e23bb9419e9c1265e17c9eb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4330938925744932566}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 38e912a97e23bb9419e9c1265e17c9eb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1469071083537068636}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 38e912a97e23bb9419e9c1265e17c9eb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7564457345032309290}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 38e912a97e23bb9419e9c1265e17c9eb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 347589196136969436}
   m_SourcePrefab: {fileID: 100100000, guid: 38e912a97e23bb9419e9c1265e17c9eb, type: 3}
 --- !u!4 &410499672145152165 stripped
 Transform:
@@ -216,12 +236,28 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1.9999999, y: 0.79999995, z: 2.1}
   m_Center: {x: 0, y: 0.39999998, z: 0}
+--- !u!114 &4236849222585029568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079091405349982751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a42c1d8eecff348836ee96a7360b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeathDestroy
+  givePoints: 0
+  scoreAmount: 0
+  playDeathSound: 0
+  myAudioSource: {fileID: 0}
 --- !u!114 &3332487711755714017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,6 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e52b640d3154cc41bdfc556ddae4c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeathRecenter
+  changeToDeathDestroy: 1
 --- !u!114 &3118170291131270373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,8 +283,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0cfe9881d526864a8e9558b1f10e9ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  currentHealth: 10
-  maxHealth: 10
+  currentHealth: 50
+  maxHealth: 100
   numLives: 3
 --- !u!114 &4330938925744932566
 MonoBehaviour:
@@ -263,4 +300,127 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShooterBullet
   bulletToShoot: {fileID: 8047424989701731068, guid: c282bcdf000848047978528dc63ec2bd, type: 3}
   startPostition: {fileID: 7050700769022020116}
-  myAudioSource: {fileID: 0}
+  myAudioSource: {fileID: 347589196136969436}
+--- !u!114 &1469071083537068636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079091405349982751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00a30846a0dc8646a05690d24c92fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageOnOverlap
+  instantKill: 1
+  damageDone: 2
+--- !u!114 &7564457345032309290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079091405349982751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75220bf579fb6ee43967812f7ed2aac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+--- !u!82 &347589196136969436
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079091405349982751}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.508
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

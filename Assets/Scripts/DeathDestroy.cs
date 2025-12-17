@@ -8,7 +8,7 @@ public class DeathDestroy : Death
 
     [Header("Score")]
     public bool playDeathSound;
-    //public AudioSource myAudioSource;
+    public AudioSource myAudioSource;
  
     public override void Die()
     {

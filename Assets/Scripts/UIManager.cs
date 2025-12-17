@@ -32,7 +32,11 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateTimer();
+        if(timerImage != null && buttomText != null)
+        {
+            UpdateTimer();
+        }
+        
 
         if(playerHealth.currentHealth != lastCurrentHealth)
         {
