@@ -74,8 +74,8 @@ public class SceneController : MonoBehaviour
         pauseMenu.SetActive(true);
 
         // Optional: unlock mouse
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        // Cursor.lockState = CursorLockMode.None;
+        // Cursor.visible = true;
     }
 
     // Resumes the game
@@ -87,7 +87,7 @@ public class SceneController : MonoBehaviour
         pauseMenu.SetActive(false);
 
         // Optional: lock mouse again
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        // Cursor.lockState = CursorLockMode.Locked;
+        // Cursor.visible = false;
     }
 }
